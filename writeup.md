@@ -47,14 +47,14 @@ There are several shortcomings with the current lane-finding pipeline
 
 - In the challenge video, my algorithm has a hard time detecting line segments from the left yellow line during the lighter asphalt portion of the video.
 
-- No single set of parameters that worked well for both the test images/video and challenge video. I had to tweak the pipeline parameters in order to get it to work well for the challenge video.
+- I had to tweak the pipeline parameters in order to get it to work OK for the challenge video.  No single set of parameters  worked well for both the test images/videos and challenge video.
 
-- The region-of-interest is hardcoded to a trapezoidal area that extends all the way to the bottom of an image.  If a large portion of the car is in the image, many false line segments may be detected.
+- The region-of-interest is hardcoded to a trapezoidal area that extends all the way to the bottom of an image.  If a large portion of the car (or another car) is in the image, many false line segments may be detected.
 
-- The algorithm is only capable of drawing straight lines.  During sharp turns, the drawn lines will not reflected the actual path of lane lines in front of the car. 
+- The algorithm is only capable of drawing straight lines.  During sharp turns, the drawn lines will not reflect the actual curved path of lane lines in front of the car. 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...  memory/buffer to smooth lane predictions
+A possible improvement would be to incorporate some notion of memory or history from previously detected lanes.  When processing video, N previous detected lines could be used to influence the current image's drawn lines.  For example, we could use an average of lines from a buffer.  This would make the drawn lines on a video appear smoother (less frame-to-frame jitter) and more robost to noise from a single frame.
 
-Another potential improvement could be to ... incorporate color detection 
+Another potential improvement could be to incorporate color detection in our line finding algorithm.  This would help detect lines in cases where the algorithm performs poorly, notably yellow lines on lighter-colored asphalt.
