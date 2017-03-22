@@ -43,10 +43,15 @@ The figures below show how the pipeline works.
 
 There are several shortcomings with the current lane-finding pipeline
 
-- jittering
-- yellow lines
-- car in front
-- only capable of drawing straight lines
+- In the submitted output videos, the detected lines jitter a lot frame-to-frame.
+
+- In the challenge video, my algorithm has a hard time detecting line segments from the left yellow line during the lighter asphalt portion of the video.
+
+- No single set of parameters that worked well for both the test images/video and challenge video. I had to tweak the pipeline parameters in order to get it to work well for the challenge video.
+
+- The region-of-interest is hardcoded to a trapezoidal area that extends all the way to the bottom of an image.  If a large portion of the car is in the image, many false line segments may be detected.
+
+- The algorithm is only capable of drawing straight lines.  During sharp turns, the drawn lines will not reflected the actual path of lane lines in front of the car. 
 
 ### 3. Suggest possible improvements to your pipeline
 
