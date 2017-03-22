@@ -55,6 +55,6 @@ There are several shortcomings with the current lane-finding pipeline
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to incorporate some notion of memory or history from previously detected lanes.  When processing video, N previous detected lines could be used to influence the current image's drawn lines.  For example, we could use an average of lines from a buffer.  This would make the drawn lines on a video appear smoother (less frame-to-frame jitter) and more robost to noise from a single frame.
+A possible improvement would be to incorporate some notion of memory or history from previously detected lanes.  When processing video, N previous detected lines could be used to influence the current image's drawn lines.  For example, we could use an average of lines from a buffer.  This would make the drawn lines on a video appear smoother (less frame-to-frame jitter) and more robust to noise from a single frame.
 
-Another potential improvement could be to incorporate color detection in our line finding algorithm.  This would help detect lines in cases where the algorithm performs poorly, notably yellow lines on lighter-colored asphalt.
+Another potential improvement could be to incorporate color detection in our line finding algorithm.  This would help detect lines in cases where the current algorithm performs poorly, notably yellow lines on lighter-colored asphalt.
