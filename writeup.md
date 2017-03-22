@@ -26,7 +26,7 @@ My pipeline consists of 6 steps.
 5. Detect line segments with Hough transform.
 6. Overlay detected lines onto original image.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function to first only consider line segments within a range of allowable slopes.  This prevents the slope of the final two output lines from being influenced by line segments that are too shallow or steep to be real lane lines.  I then use a line segment's image position and slope to determine if it is part of either the left or right lane.  I then determine two linear equations from average right/left line segment coordinates for both left and right lines.  Lastly, I extrapolate two lines spanning the bottom and top of my region-of-interest.
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function to first only consider detected line segments within a range of allowable slopes.  This prevents the slope of the final two output lines from being influenced by line segments that are too shallow or too steep to be real lane lines.  I then use a line segment's image position and slope to determine if it is part of either the left or right lane.  All valid left/right line segments coordinates are then averaged to derive two linear equations, one each for left and right lines.  Lastly, I extrapolate two lines spanning the bottom and top of my region-of-interest.
 
 The figures below show how the pipeline works.
 
