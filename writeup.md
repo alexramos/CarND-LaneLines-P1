@@ -9,7 +9,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./test_images_output/solidWhiteRight_alg.png "Alg"
 [image2]: ./test_images_output/solidWhiteRight_lines.jpg "Lanes"
-[image2]: ./test_images_output/solidWhiteRight_lines_V2.jpg "Lanes_V2"
+[image3]: ./test_images_output/solidWhiteRight_lines_V2.jpg "Lanes_V2"
 
 ---
 
