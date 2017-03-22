@@ -1,12 +1,4 @@
-#**Finding Lane Lines on the Road** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Finding Lane Lines on the Road**
+# **Finding Lane Lines on the Road** 
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
@@ -15,35 +7,39 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/solidWhiteCurve_alg.png "Alg"
 
 ---
 
-### Reflection
+## Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. 
+My pipeline consisted of 6 steps. 
 
-1. I converted the images to grayscale.
-2. then I detected edges with Canny.
+1. Convert image to grayscale.
+2. Perform Gaussian kernel smooth
+3. Find edges with Canny edge detector
+4. Mask image to only region of interest (trapezoidal area in front of car)
+5. Detect line segments with Hough transform
+6. Overlay detected lines onto original image
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+The figure below shows how the pipeline work.
 
 ![alt text][image1]
 
 
-###2. Identify potential shortcomings with your current pipeline
+### 2. Identify potential shortcomings with your current pipeline
 
+There are several shortcomings with the current lane-finding pipeline
 
-One potential shortcoming would be what would happen when ... 
+- jittering
+- yellow lines
+- car in front
 
-Another shortcoming could be ...
-
-
-###3. Suggest possible improvements to your pipeline
+### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to ...
 
