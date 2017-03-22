@@ -22,5 +22,5 @@ This fork of [CarND-LaneLines-P1](https://github.com/udacity/CarND-LaneLines-P1)
 - **P1.ipynb**  -- Project code
 - **writeup.md**  -- Write up
 - **test_images_output/**  -- Directory of output images
-- **test_videos_output/**  -- Directory of output videos
+- **test_videos_output/**  -- Directory of output videos (includes challenge video)
 
